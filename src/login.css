@@ -225,7 +225,11 @@
   background: #e6f9fb;
   color: #08757e;
 }
-
+.must-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
 .login-button {
   min-height: 52px;
   border: 0;

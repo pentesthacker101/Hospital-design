@@ -1,14 +1,16 @@
 import medicalTeam from './assets/medical-team.svg';
 import './login.css';
+import mustLogo from './assets/must log black.png';
 
 function LifelineMark() {
   return (
     <div className="lifeline-brand" aria-label="Lifeline">
-      <svg className="lifeline-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
-        <path d="M31.9 9.2c4.2 0 7.7 3.4 7.7 7.7v2.3h2.3c4.2 0 7.7 3.4 7.7 7.7s-3.4 7.7-7.7 7.7h-2.3v2.3c0 4.2-3.4 7.7-7.7 7.7s-7.7-3.4-7.7-7.7v-2.3h-2.3c-4.2 0-7.7-3.4-7.7-7.7s3.4-7.7 7.7-7.7h2.3v-2.3c0-4.3 3.4-7.7 7.7-7.7Z" />
-        <path d="M45.1 37.1c3.7 2.1 4.9 6.8 2.8 10.5s-6.8 4.9-10.5 2.8l-2-1.2-1.2 2c-2.1 3.7-6.8 4.9-10.5 2.8s-4.9-6.8-2.8-10.5l1.2-2-2-1.2c-3.7-2.1-4.9-6.8-2.8-10.5s6.8-4.9 10.5-2.8l2 1.2 1.2-2c2.1-3.7 6.8-4.9 10.5-2.8s4.9 6.8 2.8 10.5l-1.2 2 2 1.2Z" />
-      </svg>
-      <span>Lifeline</span>
+      <img
+        src={mustLogo}
+        alt="MUST Logo"
+        className="must-logo"
+      />
+      <span>Electronic Medical Records system(EMRS)</span>
     </div>
   );
 }
@@ -72,22 +74,6 @@ export default function Login({ roles, activeRoleId, onRoleChange, onLogin }) {
               </div>
             </label>
 
-            <div className="login-role-picker" aria-label="Choose dashboard role">
-              <span>Continue as</span>
-              <div>
-                {roles.map((role) => (
-                  <button
-                    key={role.id}
-                    type="button"
-                    className={role.id === activeRole.id ? 'active' : ''}
-                    onClick={() => onRoleChange(role.id)}
-                    aria-pressed={role.id === activeRole.id}
-                  >
-                    {role.navLabel}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             <button className="login-button" type="submit">
               Login
